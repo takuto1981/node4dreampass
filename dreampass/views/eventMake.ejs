@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=yes,
+                initial-scale=1.0,maximum-scale=3.0" />
+    <title>event Making </title>
+  </head>
+  <body>
+    <h1 id="title" >イベント登録</h1>
+    <form action="/eventMake/<%= user %>" method="post" id ="form">
+      <div class="input_bk">
+          <label><div class="cap">タイトル</div>
+            <input id="title" name="event[title]" type="text" size="100" maxlength="100" required />
+          </label>
+          </div>
+        <div class="input_bk">
+          <label><div class="cap">映画名称</div>
+            <input id="movie_name" name="event[movie_name]" type="text" size="50" maxlength="50"required />
+          </label>
+        </div>
+        <div class="input_bk">
+          <label><div class="cap">映画館</div>
+            <input id="place" name="event[place]" type="text" size="50" maxlength="50" required />
+          </label>
+        </div>
+        <div class="input_bk">
+          <label><div class="cap">上映日時</div>
+            <input id="begintime" name="event[begintime]" type="date" value=<%= today %> required />
+          </label>
+        </div>
+        <div class="input_bk">
+          <label><div class="cap">企画者</div>
+            <input id="owner" name="event[owner]" type="text" value="<%= user %>" required />
+          </label>
+        </div>
+        <div class="input_bk">
+          <label><div class="cap">コメント</div>
+            <textarea name="event[comment]" cols="120" rows="10">
+              熱い想いを書き込みお願いします。
+            </textarea><br/>
+          </label>
+        </div>
+        <div class="input_bk">
+          <label><div class="cap">購入方法</div>
+            <input id="all_deal" type="radio" name="event[purchase]" value="all_deal" >一括購入
+            <input id="div_deal" type="radio" name="event[purchase]" value"div_deal" checked>共同購入
+          </label>
+        </div>
+　　  <div class="submit_button">
+        <input id="save_btn" type="submit" value="登録"/>
+        <input id="cancel_btn" type="reset" value="キャンセル"/>
+     </div>
+   </form>
+  </body>
+</html>
